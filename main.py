@@ -1,36 +1,16 @@
-# Python 3 program to find 
-# factorial of given number
-  
-# Function to find factorial of given number
-def factorial(n):
-       
-    if n == 0:
-        return 1
-      
-    return n * factorial(n-1)
-   
-# Driver Code
-num = 5;
-print("Factorial of", num, "is",
-factorial(num))
-# Python program to check if year is a leap year or not
 
-year = 2000
+def linearSearchProduct(productList,targetProduct):
+  indices = []
 
-# To get year (integer input) from the user
-# year = int(input("Enter a year: "))
+  for index,product in enumerate(productList):
+    if product == targetProduct:
+     indices.append(index)
 
-# divided by 100 means century year (ending with 00)
-# century year divided by 400 is leap year
-if (year % 400 == 0) and (year % 100 == 0):
-    print("{0} is a leap year".format(year))
+  return indices
 
-# not divided by 100 means not a century year
-# year divided by 4 is a leap year
-elif (year % 4 ==0) and (year % 100 != 0):
-    print("{0} is a leap year".format(year))
+#Example Usages:
+product =["shoes","boots","loafer","shoes","converse","shoes"]
 
-# if not divided by both 400 (century year) and 4 (not century year)
-# year is not leap year
-else:
-    print("{0} is not a leap year".format(year))
+target = "shoes"
+result = linearSearchProduct(product,target)
+print(result)
